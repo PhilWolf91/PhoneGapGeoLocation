@@ -1,8 +1,20 @@
 var currentPosition;
 var savedPosition;
 var distanceBetweenCurrentAndSaved;
-document.addEventListener("deviceready", onDeviceReady, false);
-document.addEventListener("DOMContentLoaded", onDOMContentLoaded, false);
+if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+    alert("Phone");
+    document.addEventListener("deviceready", onDeviceReady, false);
+}
+else {
+    alert("Browser");
+    document.addEventListener("DOMContentLoaded", onDOMContentLoaded, false);
+}
+function onDOMContentLoaded() {
+    setupGeoLocationEvents();
+}
+function onDeviceReady() {
+    setupGeoLocationEvents();
+}
 function setupGeoLocationEvents() {
     if (navigator.geolocation) {
         //getCurrentPosition takes a succesCallback function which
@@ -11,13 +23,10 @@ function setupGeoLocationEvents() {
     }
     document.getElementById('setSavedPositionButton').addEventListener("click", savedPositionButtonClicked, false);
     document.getElementById('determineDistanceButton').addEventListener("click", determineDistanceButtonClicked, false);
-    document.getElementById('getNewCurrentPositionButton').addEventListener("click", getNewCurrentPosition);
+    document.getElementById('getNewCurrentPositionButton').addEventListener("click", getNewCurrentPosition, false);
 }
-function onDOMContentLoaded() {
-    setupGeoLocationEvents();
-}
-function onDeviceReady() {
-    setupGeoLocationEvents();
+function getNewCurrentPosition() {
+    navigator.geolocation.getCurrentPosition(showPosition);
 }
 function savedPositionButtonClicked() {
     navigator.geolocation.getCurrentPosition(setSavedPosition);
@@ -31,9 +40,7 @@ function showPosition(position) {
     var currentPositionString = "Logitude: " + position.coords.longitude + "; Latitude: " + position.coords.latitude;
     document.getElementById('currentPosition').textContent = currentPositionString;
     currentPosition = position;
-}
-function getNewCurrentPosition() {
-    navigator.geolocation.getCurrentPosition(showPosition);
+    alert(position);
 }
 function determineDistanceButtonClicked() {
     determineDistanceBetweenCurrentAndSavedPosition(currentPosition, savedPosition);

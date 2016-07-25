@@ -2,9 +2,21 @@ var currentPosition: Position;
 var savedPosition: Position;
 var distanceBetweenCurrentAndSaved: number;
 
-document.addEventListener("deviceready", onDeviceReady, false);
+if(navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)){
+    alert("Phone")
+    document.addEventListener("deviceready", onDeviceReady, false);    
+}
+else{
+    alert("Browser")
+    document.addEventListener("DOMContentLoaded", onDOMContentLoaded, false);
+}
 
-document.addEventListener("DOMContentLoaded", onDOMContentLoaded, false);
+function onDOMContentLoaded(){
+    setupGeoLocationEvents();
+}
+function onDeviceReady(){
+    setupGeoLocationEvents();
+}
 
 function setupGeoLocationEvents(){
     if(navigator.geolocation){
@@ -15,14 +27,11 @@ function setupGeoLocationEvents(){
 
     document.getElementById('setSavedPositionButton').addEventListener("click", savedPositionButtonClicked, false);
     document.getElementById('determineDistanceButton').addEventListener("click", determineDistanceButtonClicked, false);
-    document.getElementById('getNewCurrentPositionButton').addEventListener("click", getNewCurrentPosition);
+    document.getElementById('getNewCurrentPositionButton').addEventListener("click", getNewCurrentPosition, false);
 }
 
-function onDOMContentLoaded(){
-    setupGeoLocationEvents();
-}
-function onDeviceReady(){
-    setupGeoLocationEvents();
+function getNewCurrentPosition(){
+    navigator.geolocation.getCurrentPosition(showPosition);
 }
 
 function savedPositionButtonClicked (){
@@ -40,10 +49,7 @@ function showPosition(position: Position) {
 	var currentPositionString = "Logitude: " + position.coords.longitude + "; Latitude: " + position.coords.latitude;
 	document.getElementById('currentPosition').textContent = currentPositionString;
     currentPosition = position;
-}
-
-function getNewCurrentPosition(){
-    navigator.geolocation.getCurrentPosition(showPosition);
+    alert("lat: " + position.coords.latitude + ", long: " + position.coords.longitude);
 }
 
 function determineDistanceButtonClicked(){
