@@ -56,7 +56,6 @@ function onDOMContentLoaded(){
 }
 
 function setupGeoLocationEvents(){
-    alert("setup started");
     if(navigator.geolocation){
         //getCurrentPosition takes a succesCallback function which
         //will be given an object with co-ordinates
@@ -87,7 +86,6 @@ function showPosition(position) {
 	var currentPositionString = "Logitude: " + position.coords.longitude + "; Latitude: " + position.coords.latitude;
 	document.getElementById('currentPosition').textContent = currentPositionString;
     currentPosition = position;
-    alert("lat: " + position.coords.latitude + ", long: " + position.coords.longitude);
 }
 
 function determineDistanceButtonClicked(){
