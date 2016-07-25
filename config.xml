@@ -6,7 +6,7 @@
         version="1.0.2" 
         versionCode="10" >
   
-    <name>GeoLocationTesting/name>
+    <name>GeoLocationTesting</name>
     <description>
       Testing for GeoLocation
     </description>
