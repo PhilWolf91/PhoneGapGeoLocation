@@ -6,9 +6,9 @@
         version="1.0.2" 
         versionCode="10" >
   
-    <name>LobbyGuard</name>
+    <name>GeoLocationTesting/name>
     <description>
-      LobbyGuard Mobile
+      Testing for GeoLocation
     </description>
     <author email="phillip.wolf@lobbyguard.com" href="http://phillipwolf91.wordpress.com">
         Wolf Software
