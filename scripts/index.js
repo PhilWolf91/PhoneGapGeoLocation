@@ -1,7 +1,9 @@
 var currentPosition;
 var savedPosition;
 var distanceBetweenCurrentAndSaved;
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("DOMContentLoaded", onDOMContentLoaded, false);
+function setupGeoLocationEvents() {
     if (navigator.geolocation) {
         //getCurrentPosition takes a succesCallback function which
         //will be given an object with co-ordinates
@@ -10,7 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('setSavedPositionButton').addEventListener("click", savedPositionButtonClicked, false);
     document.getElementById('determineDistanceButton').addEventListener("click", determineDistanceButtonClicked, false);
     document.getElementById('getNewCurrentPositionButton').addEventListener("click", getNewCurrentPosition);
-});
+}
+function onDOMContentLoaded() {
+    setupGeoLocationEvents();
+}
+function onDeviceReady() {
+    setupGeoLocationEvents();
+}
 function savedPositionButtonClicked() {
     navigator.geolocation.getCurrentPosition(setSavedPosition);
 }
