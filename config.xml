@@ -13,15 +13,8 @@
     <author email="phillip.wolf@lobbyguard.com" href="http://phillipwolf91.wordpress.com">
         Wolf Software
     </author>
-    <!--<preference name="ServiceUri" value="https://api2-test.lobbyguard.net/api/V5" />
-    <preference name="permissions" value="none" />-->
-    
-    <!--<feature name="http://api.phonegap.com/1.0/device" />
-    <feature name="http://api.phonegap.com/1.0/camera" />
-    <feature name="http://api.phonegap.com/1.0/file" />-->
+
     <feature name="http://api.phonegap.com/1.0/geolocation" />
-    <!--<feature name="http://api.phonegap.com/1.0/network" />
-    <feature name="http://api.phonegap.com/1.0/notification" />-->
     
     <preference name="phonegap-version" value="cli-6.1.0" />
     <preference name="orientation" value="portrait" />
@@ -40,19 +33,8 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="android-windowSoftInputMode" value="adjustPan" />
     
-  <!-- Old plugins used prior to phonegap-version 5.2 and 6.1 /// started using NPM instead of PGB host for packages -->
-    <!--<gap:plugin name="cordova-plugin-camera" source="npm" />
-    <gap:plugin name="cordova-plugin-device" source="npm" />
-    <gap:plugin name="cordova-plugin-file" source="npm" />
-    <gap:plugin name="cordova-plugin-file-transfer" source="npm" />
     <gap:plugin name="cordova-plugin-geolocation" source="npm" />
-    <gap:plugin name="cordova-plugin-network-information" source="npm" />
-    <gap:plugin name="cordova-plugin-dialogs" source="npm" />
-    <gap:plugin name="cordova-plugin-vibration" source="npm" />
-    <gap:plugin name="cordova-plugin-statusbar" source="npm" />
-    <gap:plugin name="cordova-plugin-splashscreen" source="npm" />
-    <gap:plugin name="cordova-plugin-whitelist"  source="npm"/>
-    -->
+    
     <allow-navigation href="*" />
     <access origin="*" />
     <allow-intent href="*" />
