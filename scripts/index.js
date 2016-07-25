@@ -40,7 +40,7 @@ function showPosition(position) {
     var currentPositionString = "Logitude: " + position.coords.longitude + "; Latitude: " + position.coords.latitude;
     document.getElementById('currentPosition').textContent = currentPositionString;
     currentPosition = position;
-    alert(position);
+    alert("lat: " + position.coords.latitude + ", long: " + position.coords.longitude);
 }
 function determineDistanceButtonClicked() {
     determineDistanceBetweenCurrentAndSavedPosition(currentPosition, savedPosition);
