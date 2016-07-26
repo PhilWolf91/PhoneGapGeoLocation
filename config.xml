@@ -4,7 +4,7 @@
   <author email="phillip.wolf@lobbyguard.com" href="http://phillipwolf91.wordpress.com">Wolf Software</author>
   <content src="index.html"/>
   <preference name="DisallowOverscroll" value="true"/>
-  <preference name="android-minSdkVersion" value="14"/>
+  <preference name="android-minSdkVersion" value="7"/>
   <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1"/>
   <plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1"/>
   <plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0"/>
@@ -33,7 +33,7 @@
     <icon src="www/res/icon/android/drawable-xhdpi-icon.png" density="xhdpi"/>
     <icon src="www/res/icon/android/drawable-xxhdpi-icon.png" density="xxhdpi"/>
     <icon src="www/res/icon/android/drawable-xxxhdpi-icon.png" density="xxxhdpi"/>
-    <splash src="www/res/screen/android/drawable-land-ldpi-screen.png" density="land-ldpi"/>
+    <!--<splash src="www/res/screen/android/drawable-land-ldpi-screen.png" density="land-ldpi"/>
     <splash src="www/res/screen/android/drawable-land-mdpi-screen.png" density="land-mdpi"/>
     <splash src="www/res/screen/android/drawable-land-hdpi-screen.png" density="land-hdpi"/>
     <splash src="www/res/screen/android/drawable-land-xhdpi-screen.png" density="land-xhdpi"/>
@@ -44,7 +44,7 @@
     <splash src="www/res/screen/android/drawable-port-hdpi-screen.png" density="port-hdpi"/>
     <splash src="www/res/screen/android/drawable-port-xhdpi-screen.png" density="port-xhdpi"/>
     <splash src="www/res/screen/android/drawable-port-xxhdpi-screen.png" density="port-xxhdpi"/>
-    <splash src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi"/>
+    <splash src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi"/>-->
   </platform>
   <platform name="ios">
     <icon src="www/res/icon/ios/icon.png" platform="ios" width="57" height="57"/>

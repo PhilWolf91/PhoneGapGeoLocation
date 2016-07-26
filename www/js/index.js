@@ -49,15 +49,31 @@ var app = {
     }
 };
 
+// function Coordinates(){
+//     this.longitude;
+//     this.latitude;
+// }
 
+// function GeoLocation(){
+//     this.CurrentPosition = new Coordinates();
+//     this.SavedPosition = new Coordinates();
+    
+//     this.AddEventListeners = function(){
+//         document.getElementById('setSavedPositionButton').addEventListener("click", savedPositionButtonClicked, false);
+//         document.getElementById('determineDistanceButton').addEventListener("click", determineDistanceButtonClicked, false);
+//         document.getElementById('getNewCurrentPositionButton').addEventListener("click", getNewCurrentPosition, false);
+//     }
+    
+//     this.GetCurrentPosition = function(){
+//         navigator.geolocation.getCurrentPosition(getCurrentPositionSuccess, false);
+//     }
+// }
 function onDOMContentLoaded(){
     setupGeoLocationEvents();
 }
 
 function setupGeoLocationEvents(){
     if(navigator.geolocation){
-        //getCurrentPosition takes a succesCallback function which
-        //will be given an object with co-ordinates
         getNewCurrentPosition();
     }
 
@@ -106,5 +122,9 @@ function distance(lat1, lon1, lat2, lon2) {
 function determineDistanceBetweenCurrentAndSavedPosition(currentPosition, savedPosition){
     
     distanceBetweenCurrentAndSaved = distance(currentPosition.coords.latitude, currentPosition.coords.longitude, savedPosition.coords.latitude, savedPosition.coords.longitude);
-    document.getElementById('distance').textContent = distanceBetweenCurrentAndSaved.toString();
+    var distanceInMeters = distanceBetweenCurrentAndSaved * 1000
+    var distanceInFeet = distanceInMeters * 3.28
+    var distanceString = distanceInMeters + " meters ---- " + distanceInFeet + " feet";
+
+    document.getElementById('distance').textContent = distanceString;
 }
